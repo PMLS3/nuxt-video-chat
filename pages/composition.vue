@@ -10,20 +10,22 @@ import {
   useContext,
   computed,
   onBeforeMount,
-  watch
+  watch,
 } from "@nuxtjs/composition-api";
 
 export default {
   setup() {
-    const { store, $nuxtSocket } = useContext();
+    // const { store, $nuxtSocket } = useContext();
+    const ctx = useContext();
     onBeforeMount(async () => {
-      console.log("useContext", useContext());
-      console.log("window.$nuxt", window.$nuxt);
-      console.log("nuxtSockett", $nuxtSocket);
+      const socket = ctx.$nuxtSocket({ channel: "/videochat" });
+      // console.log("useContext", useContext());
+      // console.log("window.$nuxt", window.$nuxt);
+      // console.log("nuxtSockett", $nuxtSocket);
 
-      let socket = $nuxtSocket({ channel: "/videochat" });
+      // let socket = $nuxtSocket({ channel: "/videochat" });
     });
-  }
+  },
 };
 </script>
 

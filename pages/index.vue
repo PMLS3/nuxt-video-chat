@@ -1,6 +1,12 @@
 <template>
   <div>
     <vs-button
+      color="primary"
+      type="filled"
+      icon="mic"
+      @click="$router.push('/composition')"
+    ></vs-button>
+    <vs-button
       class="mic-btn"
       color="primary"
       type="filled"
